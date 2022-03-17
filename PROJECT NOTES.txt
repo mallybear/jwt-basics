@@ -1,0 +1,55 @@
+
+1. Install dependencies
+
+2. No database to set up
+
+3. Set up app.js
+
+4. Set up intial controllers
+
+    - set up the logic behind each page
+    - set up what you want the page to show
+
+5. Set up routers for each controller
+    
+    - require express and initialize routers
+    - require the controllers that were set up
+    - export
+
+6. Set up routers in app.js
+
+    - require routers
+    - setup middleware for route endpoint
+
+7. Test out routes in Postman
+
+JSON WEB TOKEN
+
+8. Check username, password in post(login) request in controller
+
+    - import errors/custom-error.js
+    - create email/password check login and throw error
+        const { username, password } = req.body
+        if (!username || !password) {
+            throw new CustomAPIError('Please provide email an password', 400)
+        }
+
+9. Require jsonwebtoken in controller
+
+    - create id (usally taken for db)
+    - create TOKEN
+        - in token, create secret which will be in .env file (in production, make secret long, comlex, and unguessable string value)
+
+10. Verify presence of token when accessing dashboard in the controller
+
+11. Create middleware for authorization
+
+    - don't forget to add it to routes
+
+12. Create custom error files for each type of error
+
+    - then create index.js file to import them all and export
+    - import const { StatusCodes } = require('http-status-codes') and apply status codes
+
+13. Refactor code and insert new errors
+
